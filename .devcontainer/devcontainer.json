@@ -10,11 +10,17 @@
             "ms-python.debugpy",
             "redhat.vscode-yaml",
             "ms-python.black-formatter",
-            "cweijan.vscode-postgresql-client2"
+            "cweijan.vscode-postgresql-client2",
+            "ms-toolsai.jupyter"
         ]
       }
     },
     "dockerComposeFile": "docker-compose.yml",
     "service": "devcontainer",
-    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"        
+    "workspaceFolder": "/workspaces/src",
+    "containerEnv": {
+      "SHELL": "/bin/bash"
+    },
+    
+    "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt"
 }
